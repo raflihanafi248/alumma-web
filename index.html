@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Alumma — Solusi Aluminium Berkualitas</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #111;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(17, 17, 17, 0.95);
+      border-bottom: 1px solid #333;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      min-height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #f5a623;
+    }
+
+    .logo span {
+      color: #fff;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+    }
+
+    nav ul li a {
+      color: #ddd;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #f5a623;
+    }
+
+    /* ================= BUTTON ================= */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border-radius: 6px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #f5a623;
+      color: #111;
+    }
+
+    .btn-primary:hover {
+      background: #ffb83d;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid #f5a623;
+      color: #f5a623;
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: #f5a623;
+      color: #111;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.8)),
+        linear-gradient(135deg, #222, #111);
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-size: 55px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #f5a623;
+    }
+
+    .hero p {
+      color: #ccc;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    /* ================= SECTION ================= */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #aaa;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #f5a623;
+    }
+
+    .about-text p {
+      color: #ccc;
+      margin-bottom: 15px;
+    }
+
+    .about-box {
+      background: #1c1c1c;
+      border: 1px solid #333;
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    /* ================= VISI MISI ================= */
+
+    .visi-misi {
+      background: #181818;
+    }
+
+    .visi-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .visi-card {
+      background: #222;
+      border: 1px solid #333;
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .visi-card h3 {
+      color: #f5a623;
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    .visi-card p,
+    .visi-card li {
+      color: #ccc;
+    }
+
+    .visi-card ul {
+      padding-left: 20px;
+    }
+
+    /* ================= PRODUK ================= */
+
+    .produk {
+      background: #111;
+    }
+
+    .produk-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .produk-item {
+      background: #1c1c1c;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 30px;
+      transition: 0.3s;
+    }
+
+    .produk-item:hover {
+      transform: translateY(-5px);
+      border-color: #f5a623;
+    }
+
+    .produk-icon {
+      font-size: 35px;
+      margin-bottom: 15px;
+      color: #f5a623;
+    }
+
+    .produk-item h3 {
+      margin-bottom: 12px;
+    }
+
+    .produk-item p {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    /* ================= PROSES ================= */
+
+    .proses {
+      background: #181818;
+    }
+
+    .proses-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .proses-item {
+      text-align: center;
+      background: #222;
+      border: 1px solid #333;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .number {
+      width: 45px;
+      height: 45px;
+      margin: 0 auto 15px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f5a623;
+      color: #111;
+      font-weight: bold;
+    }
+
+    .proses-item h3 {
+      margin-bottom: 10px;
+    }
+
+    .proses-item p {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact {
+      background: #111;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .contact-info h3 {
+      font-size: 28px;
+      color: #f5a623;
+      margin-bottom: 20px;
+    }
+
+    .contact-info p {
+      color: #ccc;
+      margin-bottom: 15px;
+    }
+
+    .contact-item {
+      margin-top: 20px;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+
+    .contact-item span {
+      color: #aaa;
+    }
+
+    /* ================= FORM ================= */
+
+    .contact-form {
+      background: #1c1c1c;
+      border: 1px solid #333;
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .form-row {
+      margin-bottom: 18px;
+    }
+
+    .form-row label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 14px;
+      color: #ddd;
+    }
+
+    .form-row input,
+    .form-row textarea {
+      width: 100%;
+      padding: 13px;
+      background: #111;
+      border: 1px solid #444;
+      border-radius: 6px;
+      color: #fff;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .form-row input:focus,
+    .form-row textarea:focus {
+      border-color: #f5a623;
+    }
+
+    .form-row textarea {
+      height: 130px;
+      resize: vertical;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #0b0b0b;
+      border-top: 1px solid #333;
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    footer p {
+      color: #777;
+      font-size: 14px;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 900px) {
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .about-grid,
+      .visi-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .produk-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .proses-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      nav ul {
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .nav {
+        padding: 18px 0;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .hero {
+        min-height: 80vh;
+      }
+
+      .hero h1 {
+        font-size: 35px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .produk-grid,
+      .proses-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header>
+    <div class="container nav">
+
+      <div class="logo">
+        Alum<span>ma</span>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#produk">Produk</a></li>
+          <li><a href="#proses">Proses</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+
+  <section class="hero" id="home">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <h1>
+          Solusi Aluminium
+          <span>Berkualitas</span>
+        </h1>
+
+        <p>
+          Alumma menyediakan solusi aluminium berkualitas
+          untuk kebutuhan rumah, bisnis, dan proyek Anda.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#produk" class="btn btn-primary">
+            Lihat Produk
+          </a>
+
+          <a href="#kontak" class="btn btn-outline">
+            Hubungi Kami
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= TENTANG ================= -->
+
+  <section id="tentang">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Tentang Alumma</h2>
+        <p>Mengenal lebih dekat perusahaan kami</p>
+      </div>
+
+      <div class="about-grid">
+
+        <div class="about-text">
+
+          <h3>Aluminium untuk Berbagai Kebutuhan</h3>
+
+          <p>
+            Alumma merupakan perusahaan yang bergerak dalam
+            bidang aluminium dan menyediakan berbagai solusi
+            aluminium untuk kebutuhan pelanggan.
+          </p>
+
+          <p>
+            Kami mengutamakan kualitas material, ketelitian
+            pengerjaan, serta pelayanan yang baik agar setiap
+            proyek dapat menghasilkan produk yang sesuai
+            dengan kebutuhan pelanggan.
+          </p>
+
+        </div>
+
+        <div class="about-box">
+
+          <h3>Kenapa Memilih Alumma?</h3>
+
+          <p>
+            Kami berusaha memberikan produk aluminium yang
+            berkualitas dengan proses pengerjaan yang rapi
+            dan pelayanan yang profesional.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= VISI MISI ================= -->
+
+  <section class="visi-misi">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Visi & Misi</h2>
+
+        <p>
+          Komitmen kami dalam memberikan pelayanan terbaik
+        </p>
+
+      </div>
+
+      <div class="visi-grid">
+
+        <div class="visi-card">
+
+          <h3>Visi</h3>
+
+          <p>
+            Menjadi perusahaan aluminium yang terpercaya
+            dan mampu memberikan solusi berkualitas untuk
+            berbagai kebutuhan pelanggan.
+          </p>
+
+        </div>
+
+        <div class="visi-card">
+
+          <h3>Misi</h3>
+
+          <ul>
+            <li>Menyediakan produk aluminium berkualitas.</li>
+            <li>Memberikan pelayanan yang profesional.</li>
+            <li>Mengutamakan kepuasan pelanggan.</li>
+            <li>Menjaga kualitas dan ketepatan pengerjaan.</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= PRODUK ================= -->
+
+  <section class="produk" id="produk">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Produk & Layanan</h2>
+
+        <p>
+          Solusi aluminium untuk berbagai kebutuhan
+        </p>
+
+      </div>
+
+      <div class="produk-grid">
+
+        <div class="produk-item">
+
+          <div class="produk-icon">▣</div>
+
+          <h3>Kusen Aluminium</h3>
+
+          <p>
+            Kusen aluminium untuk pintu dan jendela
+            dengan desain modern dan kuat.
+          </p>
+
+        </div>
+
+        <div class="produk-item">
+
+          <div class="produk-icon">▤</div>
+
+          <h3>Pintu Aluminium</h3>
+
+          <p>
+            Pintu aluminium dengan tampilan modern
+            untuk kebutuhan rumah maupun bisnis.
+          </p>
+
+        </div>
+
+        <div class="produk-item">
+
+          <div class="produk-icon">□</div>
+
+          <h3>Jendela Aluminium</h3>
+
+          <p>
+            Jendela aluminium dengan desain yang
+            dapat disesuaikan dengan kebutuhan proyek.
+          </p>
+
+        </div>
+
+        <div class="produk-item">
+
+          <div class="produk-icon">▥</div>
+
+          <h3>Partisi Aluminium</h3>
+
+          <p>
+            Partisi aluminium untuk pembagian ruangan
+            rumah, kantor, maupun tempat usaha.
+          </p>
+
+        </div>
+
+        <div class="produk-item">
+
+          <div class="produk-icon">◇</div>
+
+          <h3>Etalase Aluminium</h3>
+
+          <p>
+            Etalase aluminium untuk berbagai kebutuhan
+            toko dan tempat usaha.
+          </p>
+
+        </div>
+
+        <div class="produk-item">
+
+          <div class="produk-icon">◆</div>
+
+          <h3>Custom Aluminium</h3>
+
+          <p>
+            Pengerjaan produk aluminium sesuai ukuran
+            dan kebutuhan pelanggan.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= PROSES ================= -->
+
+  <section class="proses" id="proses">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Proses Pengerjaan</h2>
+
+        <p>
+          Proses sederhana dan transparan
+        </p>
+
+      </div>
+
+      <div class="proses-grid">
+
+        <div class="proses-item">
+
+          <div class="number">1</div>
+
+          <h3>Konsultasi</h3>
+
+          <p>
+            Pelanggan menyampaikan kebutuhan
+            dan konsep proyek.
+          </p>
+
+        </div>
+
+        <div class="proses-item">
+
+          <div class="number">2</div>
+
+          <h3>Pengukuran</h3>
+
+          <p>
+            Melakukan pengukuran sesuai
+            kebutuhan proyek.
+          </p>
+
+        </div>
+
+        <div class="proses-item">
+
+          <div class="number">3</div>
+
+          <h3>Pengerjaan</h3>
+
+          <p>
+            Produk dibuat dengan memperhatikan
+            ukuran dan kualitas.
+          </p>
+
+        </div>
+
+        <div class="proses-item">
+
+          <div class="number">4</div>
+
+          <h3>Pemasangan</h3>
+
+          <p>
+            Produk dipasang dan disesuaikan
+            dengan kondisi lokasi.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= KONTAK ================= -->
+
+  <section class="contact" id="kontak">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Hubungi Kami</h2>
+
+        <p>
+          Silakan kirim kebutuhan proyek Anda
+        </p>
+
+      </div>
+
+      <div class="contact-grid">
+
+
+        <!-- INFORMASI KONTAK -->
+
+        <div class="contact-info">
+
+          <h3>Butuh Solusi Aluminium?</h3>
+
+          <p>
+            Ceritakan kebutuhan aluminium Anda kepada
+            kami. Tim Alumma siap membantu memberikan
+            solusi yang sesuai.
+          </p>
+
+          <div class="contact-item">
+
+            <strong>Alamat</strong>
+
+            <span>
+              Malang, Jawa Timur
+            </span>
+
+          </div>
+
+          <div class="contact-item">
+
+            <strong>Email</strong>
+
+            <span>
+              info@alumma.id
+            </span>
+
+          </div>
+
+          <div class="contact-item">
+
+            <strong>Telepon</strong>
+
+            <span>
+              +62 8XX-XXXX-XXXX
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- FORM KONTAK -->
+
+        <div class="contact-form">
+
+          <form id="contact-form">
+
+            <!-- NAMA -->
+
+            <div class="form-row">
+
+              <label for="nama">
+                Nama
+              </label>
+
+              <input
+                type="text"
+                id="nama"
+                name="nama"
+                placeholder="Nama Anda"
+                required
+              />
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="form-row">
+
+              <label for="email">
+                Email
+              </label>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email Anda"
+                required
+              />
+
+            </div>
+
+
+            <!-- NOMOR TELEPON -->
+
+            <div class="form-row">
+
+              <label for="nohp">
+                Nomor Telepon
+              </label>
+
+              <input
+                type="tel"
+                id="nohp"
+                name="nohp"
+                placeholder="08xxxxxxxxxx"
+                required
+              />
+
+            </div>
+
+
+            <!-- PESAN -->
+
+            <div class="form-row">
+
+              <label for="pesan">
+                Kebutuhan Proyek
+              </label>
+
+              <textarea
+                id="pesan"
+                name="pesan"
+                placeholder="Ceritakan kebutuhan aluminium Anda"
+                required
+              ></textarea>
+
+            </div>
+
+
+            <!-- TOMBOL -->
+
+            <button
+              type="submit"
+              class="btn btn-primary"
+              style="width:100%;"
+            >
+              Kirim Pesan
+            </button>
+
+
+            <!-- PESAN STATUS -->
+
+            <p
+              id="contact-msg"
+              style="
+                margin-top:12px;
+                font-size:13.5px;
+                color:#f5a623;
+              "
+            ></p>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="container">
+
+      <p>
+        © 2026 Alumma. All Rights Reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ================= GOOGLE SHEETS ================= -->
+
+  <script>
+
+    // URL Google Apps Script kamu
+    const SCRIPT_URL =
+      "https://script.google.com/macros/s/AKfycbyKhxmoclFHrvt75YX2l5d5wX24MNZtnIETXeCkNSz69UmOmzMDStLJsvx-VM4bmPOz/exec";
+
+
+    // Mengambil form
+    const contactForm =
+      document.getElementById("contact-form");
+
+
+    // Ketika tombol Kirim Pesan ditekan
+    contactForm.addEventListener("submit", function(e) {
+
+      // Mencegah halaman reload
+      e.preventDefault();
+
+
+      // Mengambil tempat untuk menampilkan status
+      const msg =
+        document.getElementById("contact-msg");
+
+
+      // Menampilkan tulisan Mengirim
+      msg.textContent = "Mengirim...";
+
+
+      // Mengambil data dari form
+      const nama =
+        document.getElementById("nama").value;
+
+      const email =
+        document.getElementById("email").value;
+
+      const nohp =
+        document.getElementById("nohp").value;
+
+      const pesan =
+        document.getElementById("pesan").value;
+
+
+      // Mengirim data ke Google Apps Script
+      fetch(SCRIPT_URL, {
+
+        method: "POST",
+
+        mode: "no-cors",
+
+        headers: {
+          "Content-Type":
+            "text/plain;charset=utf-8"
+        },
+
+        body: JSON.stringify({
+
+          nama: nama,
+
+          email: email,
+
+          nohp: nohp,
+
+          pesan: pesan
+
+        })
+
+      })
+
+
+      // Jika selesai
+      .then(function() {
+
+        msg.textContent =
+          "Terima kasih, pesan Anda sudah terkirim.";
+
+        // Mengosongkan form
+        contactForm.reset();
+
+      })
+
+
+      // Jika gagal
+      .catch(function(error) {
+
+        console.error(error);
+
+        msg.textContent =
+          "Gagal mengirim pesan. Silakan coba lagi.";
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
